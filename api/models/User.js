@@ -42,17 +42,18 @@ module.exports = {
 
       bio: {
           type: 'text'
+      },
+
+      type: {
+          type: 'integer',
+          defaultsTo: 100 // 100 = Searching mode    200 = Business mode
+      },
+
+      /* Whether the user has been blocked by an administrator or not */
+      blocked: {
+          type: 'boolean',
+          defautsTo: false
       }
-
-
-
-
-
-
-
-
-
-
 
   }
 
