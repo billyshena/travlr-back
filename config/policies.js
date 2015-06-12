@@ -19,7 +19,17 @@
 
 module.exports.policies = {
 
-  '*': false
+    '*': false,
+
+    AuthController: {
+        login: true
+    },
+
+    UserController: {
+        create: true
+    }
+
+
 
 
 
