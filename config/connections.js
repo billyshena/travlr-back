@@ -23,7 +23,7 @@ module.exports.connections = {
 
   postgres: {
     adapter: 'sails-postgresql',
-    url: process.env.POSTGRES_URL || 'postgres://postgres:postgres@localhost:5432/travlr',
+    url: process.env.SCALINGO_POSTGRESQL_URL || 'postgres://postgres:postgres@localhost:5432/travlr',
     schema: true
   }
 
