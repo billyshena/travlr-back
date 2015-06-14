@@ -33,6 +33,10 @@ module.exports = {
       tags: {
           collection: 'tag',
           via: 'posts'
+      },
+
+      category: {
+          model: 'category'
       }
 
 
