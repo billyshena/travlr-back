@@ -21,7 +21,7 @@ module.exports = {
 
         content: {
             type: 'text',
-            minLength: 100,
+            minLength: 10,
             required: true
         },
 
