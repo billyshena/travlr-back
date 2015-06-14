@@ -26,9 +26,6 @@ module.exports = {
       size: {
           type: 'float'
       }
-
-
-
   }
 };
 
