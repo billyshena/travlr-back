@@ -30,7 +30,9 @@ module.exports.policies = {
     },
 
     PostController: {
-        create: true
+        create: true,
+        find: true,
+        findOne: true
     }
 
 
