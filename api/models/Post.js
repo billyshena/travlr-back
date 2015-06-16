@@ -5,6 +5,8 @@
  * @docs        :: http://sailsjs.org/#!documentation/models
  */
 
+var http = require('http');
+
 module.exports = {
 
     attributes: {
@@ -36,7 +38,37 @@ module.exports = {
 
         category: {
             type: 'string'
+        },
+
+        maxPersons: {
+            type: 'integer'
+        },
+
+        image: {
+            type: 'string'
         }
+    },
+
+    afterCreate: function(values, next) {
+
+      var url  = 'http://www.splashbase.co/api/v1/images/random';
+
+      http.request(url, function (result) {
+
+        sails.log('result', result);
+        var str = '';
+        result.on('data', function (chunk) {
+          str += chunk;
+        });
+
+        result.on('end', function() {
+          str = JSON.parse(str);
+          values.image = str.url;
+          return next();
+        });
+
+      }).end();
+
     }
 
 };

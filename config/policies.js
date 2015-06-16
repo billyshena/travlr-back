@@ -30,9 +30,10 @@ module.exports.policies = {
     },
 
     PostController: {
-        create: true,
-        find: true,
-        findOne: true
+        create: ['isAuthenticated', 'setOwner'],
+        find: ['isAuthenticated', 'setOwner'],
+        findOne: ['isAuthenticated', 'setOwner'],
+        feed: true
     }
 
 

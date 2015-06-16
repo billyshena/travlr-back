@@ -6,6 +6,24 @@
  */
 
 module.exports = {
+
+
+    feed: function () {
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
 	
 };
 
