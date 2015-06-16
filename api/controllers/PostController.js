@@ -10,6 +10,10 @@ module.exports = {
 
     feed: function () {
 
+        Post
+            .find()
+
+
 
 
 

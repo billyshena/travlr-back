@@ -45,12 +45,6 @@ module.exports = function (request, response, next) {
         else {
             // Putting the token in the request and the owner with the body
             request.token = token;
-            UserService.updateUserSocketId(token, request, response);
-/*            sails.log.info(request.method + ' ' + request.url + ' ' + request.ip + ':' + request.port + ' - ' + token.id + ' ' + token.lastName);
-            sails.log.info(request.headers);
-            sails.log.info(request.body);
-            sails.log.info('--------------------------------------------');*/
-
             return next();
         }
     });
