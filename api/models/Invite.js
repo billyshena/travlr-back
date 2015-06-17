@@ -29,6 +29,26 @@ module.exports = {
     }
 
 
+  },
+
+  afterCreate: function(values, next) {
+
+    Post
+        .findOne(values.post)
+        .exec(function(err, post) {
+          if(err){ return next(err); }
+          if(!post) { return next(); }
+          else{
+            sails.log('post', post);
+            post.leftSlots = post.maxPersons - 1;
+            post.save(function(err){
+              if(err){ return next(err); }
+              else{
+                return next();
+              }
+            })
+          }
+        });
   }
 };
 

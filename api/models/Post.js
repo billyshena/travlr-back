@@ -45,6 +45,10 @@ module.exports = {
             required: true
         },
 
+        leftSlots: {
+            type: 'integer'
+        },
+
         dateActivity: {
             type: 'date',
             required: true
@@ -84,6 +88,8 @@ module.exports = {
     beforeCreate: function(values, next) {
 
       var url  = 'http://www.splashbase.co/api/v1/images/random';
+
+        values.leftSlots = values.maxPersons;
 
       http.request(url, function (result) {
 

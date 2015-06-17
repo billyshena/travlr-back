@@ -37,6 +37,7 @@ module.exports = {
 
         var roomName = 'activity' + req.param('postId');
         sails.sockets.join(req.socket, roomName);
+        sails.log('connected', sails.sockets.subscribers(roomName));
         return res.json(200);
 
     }
