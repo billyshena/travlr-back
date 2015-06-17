@@ -22,7 +22,6 @@ module.exports = {
 
         content: {
             type: 'text',
-            minLength: 10,
             required: true
         },
 
@@ -36,20 +35,53 @@ module.exports = {
             via: 'posts'
         },
 
-        category: {
-            type: 'string'
+        categories: {
+            collection: 'category',
+            via: 'posts'
         },
 
         maxPersons: {
-            type: 'integer'
+            type: 'integer',
+            required: true
+        },
+
+        dateActivity: {
+            type: 'date',
+            required: true
+        },
+
+        duration: {
+            type: 'integer',
+            required: true
         },
 
         image: {
             type: 'string'
+        },
+
+        country: {
+            type: 'string',
+            required: true
+        },
+
+        zipcode: {
+            type: 'string',
+            required: true
+        },
+
+        address: {
+            type: 'string',
+            required: true
+        },
+
+        city: {
+            type: 'string',
+            required: true
         }
+
     },
 
-    afterCreate: function(values, next) {
+    beforeCreate: function(values, next) {
 
       var url  = 'http://www.splashbase.co/api/v1/images/random';
 
@@ -63,6 +95,7 @@ module.exports = {
 
         result.on('end', function() {
           str = JSON.parse(str);
+          sails.log('values', values);
           values.image = str.url;
           return next();
         });

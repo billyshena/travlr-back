@@ -26,15 +26,46 @@ module.exports.policies = {
     },
 
     UserController: {
-        create: true
+        create: true,
+        findOne: true
     },
 
     PostController: {
         create: ['isAuthenticated', 'setOwner'],
-        find: ['isAuthenticated', 'setOwner'],
-        findOne: ['isAuthenticated', 'setOwner'],
-        feed: true
+        find: ['isAuthenticated', 'setWhereOwner'],
+        findOne: ['isAuthenticated'],
+        feed: true,
+        subscribe: ['isAuthenticated']
+    },
+
+    CategoryController: {
+        create: true,
+        find: true
+    },
+
+
+    ServiceController: {
+        '*': true
+    },
+
+
+    InviteController: {
+
+        create: ['isAuthenticated', 'setOwner'],
+        find: ['isAuthenticated'],
+        findOne: ['isAuthenticated']
+
+    },
+
+    RoomController: {
+        create: ['isAuthenticated']
+    },
+
+    MessageController: {
+        create: ['isAuthenticated']
     }
+
+
 
 
 

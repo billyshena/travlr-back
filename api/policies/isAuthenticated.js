@@ -4,6 +4,9 @@ module.exports = function (request, response, next) {
 
     var token;
 
+
+    sails.log('request headers', request.headers);
+    sails.log('authorization', request.headers);
     // If the token is passed through headers Authorization
     if (request.headers && request.headers.authorization) {
 
@@ -22,6 +25,7 @@ module.exports = function (request, response, next) {
 
     // Or by POST or GET
     else if (request.param('token')) {
+        sails.log('got token', request.param('token'));
         token = request.param('token');
         // We delete the token from query and body to not mess with blueprints
         delete request.query.token;
@@ -43,6 +47,7 @@ module.exports = function (request, response, next) {
         }
 
         else {
+
             // Putting the token in the request and the owner with the body
             request.token = token;
             return next();

@@ -50,6 +50,11 @@ module.exports = {
             defaultsTo: 100 // 100 = Searching mode    200 = Business mode
         },
 
+        rating: {
+            collection: 'rating',
+            via: 'post'
+        },
+
         /* Whether the user has been blocked by an administrator or not */
         blocked: {
             type: 'boolean',
