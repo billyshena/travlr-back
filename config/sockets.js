@@ -39,7 +39,7 @@ module.exports.sockets = {
   *                                                                          *
   ***************************************************************************/
    adapter: 'socket.io-redis',
-    host: process.env.REDIS_HOST || 'localhost',
+    host: process.env.SCALINGO_REDIS_URL || 'localhost',
     port: process.env.REDIS_PORT || 6379,
     db: process.env.REDIS_DB || '',
     pass: process.env.REDIS_PASS || null
