@@ -50,13 +50,11 @@ module.exports = {
         },
 
         dateActivity: {
-            type: 'date',
-            required: true
+            type: 'date'
         },
 
         duration: {
-            type: 'integer',
-            required: true
+            type: 'integer'
         },
 
         image: {
@@ -64,23 +62,19 @@ module.exports = {
         },
 
         country: {
-            type: 'string',
-            required: true
+            type: 'string'
         },
 
         zipcode: {
-            type: 'string',
-            required: true
+            type: 'string'
         },
 
         address: {
-            type: 'string',
-            required: true
+            type: 'string'
         },
 
         city: {
-            type: 'string',
-            required: true
+            type: 'string'
         }
 
     },

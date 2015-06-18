@@ -38,11 +38,12 @@ module.exports.sockets = {
   * via port 6379                                                            *
   *                                                                          *
   ***************************************************************************/
+
    adapter: 'socket.io-redis',
-    host: 'travlr-3104.redis.dbs.appsdeck.eu' || 'localhost',
-    port: 30222 || 6379,
-    db: 'travlr-3104' || '',
-    pass: 'qNWVb_vtuRM-8JPuOaHt' || null
+    host: process.env.REDIS_HOST || 'localhost',
+    port: process.env.REDIS_PORT || 6379,
+    db: process.env.REDIS_DB || '',
+    pass: process.env.REDIS_PASS || null
 
 
 
